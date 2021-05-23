@@ -25,12 +25,13 @@ function getRandomNumber() {
 }
 
 function getRandomColor() {
-  const currentColor = ['#'];
+  let currentColor = '#';
   for (let i = 0; i <= 5; i++) {
-    currentColor.push(COLORS[getRandomNumber()]);
+    currentColor += COLORS[getRandomNumber()];
   }
-  return currentColor.join('').toString();
+  return currentColor;
 }
+
 btn.addEventListener('click', function () {
   const newColor = getRandomColor();
   backgroundContainer.style.backgroundColor = newColor;
